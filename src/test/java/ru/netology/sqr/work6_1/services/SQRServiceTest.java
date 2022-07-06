@@ -10,10 +10,10 @@ public class SQRServiceTest {
 
     @ParameterizedTest
     @CsvFileSource(files = "src/test/resources/ranges.csv")
-    public void correctResult(int expected, int x, int y) {
+    public void correctResult(int expected, int startInterval, int theEndInterval) {
         SQRService service = new SQRService();
         //int expected = 3;
-        int actual = service.calcQuantitiesSquaresInRangeNumbers(x, y);
+        int actual = service.calcQuantitiesSquaresInRangeNumbers(startInterval, theEndInterval);
 
         Assertions.assertEquals(expected, actual);
     }
